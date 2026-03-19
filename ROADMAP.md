@@ -44,12 +44,13 @@
 | 2026-03-19 | Phase 5 complete — all 27 skills created across 5 categories |
 | 2026-03-19 | Phase 6 complete — validation pass, consistency checks, cross-references verified |
 | 2026-03-19 | Phase 7 complete — INDEX.md created, README.md updated, publication ready |
+| 2026-03-19 | Compliance audit — remediated from 77% to 100% (YAML migration, governance sync, v1.0.0 release) |
 
 ---
 
 ## Next Steps
 
-1. GitHub release — tag v1.0.0 and publish release
-2. Publicatie op agentskills.org registry
-3. Community feedback verzamelen
-4. Periodieke updates bij nieuwe Tauri 2.x releases
+1. ~~GitHub release — tag v1.0.0 and publish release~~ DONE (2026-03-19)
+2. Publish to agentskills.org registry
+3. Collect community feedback
+4. Periodic updates for new Tauri 2.x releases
