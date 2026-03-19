@@ -1,10 +1,14 @@
 ---
 name: tauri-impl-migration
-description: "Guides Tauri 1.x to 2.x migration including config restructuring, allowlist to permissions conversion, Rust API renames, JavaScript API renames and import path changes, event system changes, menu system overhaul, feature flag changes, plugin migration table, and version feature matrix. Activates when migrating from Tauri 1 to Tauri 2, updating legacy Tauri code, or comparing v1 vs v2 APIs."
+description: >
+  Use when migrating from Tauri 1 to Tauri 2, updating legacy Tauri code, or comparing v1 vs v2 APIs.
+  Prevents retaining v1 allowlist config, deprecated API calls, and outdated import paths that break at compile time.
+  Covers config restructuring, allowlist to permissions conversion, Rust and JS API renames, event and menu system changes.
+  Keywords: tauri migration, v1 to v2, allowlist, permissions conversion, API rename, import path, upgrade.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

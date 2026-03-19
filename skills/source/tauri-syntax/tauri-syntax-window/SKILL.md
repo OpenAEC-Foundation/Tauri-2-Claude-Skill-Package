@@ -1,10 +1,14 @@
 ---
 name: tauri-syntax-window
-description: "Guides Tauri 2 window management including WebviewWindowBuilder, window labels, window configuration, WindowEvent handling, JavaScript Window class methods, creating and manipulating windows from both Rust and JavaScript, and monitor information queries. Activates when creating windows, handling window events, or managing multi-window layouts."
+description: >
+  Use when creating windows, handling window events, or managing multi-window layouts in Tauri 2.
+  Prevents window label collisions and incorrect WebviewWindowBuilder usage that causes runtime panics.
+  Covers WebviewWindowBuilder, window labels, window configuration, WindowEvent handling, and JavaScript Window class.
+  Keywords: tauri window, WebviewWindowBuilder, window events, window label, Window class, monitor, multi-window.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

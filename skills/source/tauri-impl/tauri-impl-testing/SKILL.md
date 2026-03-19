@@ -1,10 +1,14 @@
 ---
 name: tauri-impl-testing
-description: "Guides testing strategies for Tauri 2 applications including Rust unit testing of commands, frontend IPC mocking with mockIPC and mockWindows, clearing mocks, WebDriver-based E2E testing patterns, and integration testing approaches. Activates when writing tests for Tauri commands, mocking IPC calls, or setting up E2E test suites."
+description: >
+  Use when writing tests for Tauri 2 commands, mocking IPC calls, or setting up E2E test suites.
+  Prevents untestable command handlers and stale mock state from missing clearMocks() between tests.
+  Covers Rust unit testing, frontend IPC mocking with mockIPC/mockWindows, WebDriver E2E testing, and integration testing.
+  Keywords: tauri testing, mockIPC, mockWindows, clearMocks, cargo test, E2E testing, WebDriver, Vitest.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

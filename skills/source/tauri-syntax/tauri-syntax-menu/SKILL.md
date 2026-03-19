@@ -1,10 +1,14 @@
 ---
 name: tauri-syntax-menu
-description: "Guides Tauri 2 menu and system tray including MenuBuilder, menu item types, PredefinedMenuItem, context menus, menu events, TrayIconBuilder, tray events, and JavaScript Menu/TrayIcon APIs. Activates when creating application menus, system tray icons, context menus, or handling menu events."
+description: >
+  Use when creating application menus, system tray icons, context menus, or handling menu events in Tauri 2.
+  Prevents using deprecated v1 menu patterns and missing menu event handler registration on the Builder.
+  Covers MenuBuilder, menu item types, PredefinedMenuItem, context menus, TrayIconBuilder, and JavaScript Menu/TrayIcon APIs.
+  Keywords: tauri menu, MenuBuilder, TrayIcon, system tray, context menu, PredefinedMenuItem, menu events.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

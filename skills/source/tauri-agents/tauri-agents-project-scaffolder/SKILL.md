@@ -1,10 +1,14 @@
 ---
 name: tauri-agents-project-scaffolder
-description: "Generates complete Tauri 2 project structures including configured plugins, permission capability files, initial Rust commands with matching TypeScript invoke calls, build pipeline configuration, and frontend framework integration. Activates when scaffolding a new Tauri project, setting up initial project structure, or generating boilerplate code for Tauri applications."
+description: >
+  Use when scaffolding a new Tauri 2 project, setting up initial project structure, or generating boilerplate code.
+  Prevents incomplete scaffolding with missing permission files, unregistered commands, or broken IPC bridges.
+  Covers configured plugins, capability files, Rust commands with TypeScript invoke calls, build pipeline, and frontend integration.
+  Keywords: tauri scaffolder, project generator, boilerplate, scaffold, new project, project structure, code generation.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

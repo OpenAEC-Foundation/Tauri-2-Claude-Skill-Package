@@ -1,10 +1,14 @@
 ---
 name: tauri-core-runtime
-description: "Guides Tauri 2 application lifecycle including Builder configuration, setup hook, AppHandle usage, Manager trait, tokio async runtime, window event callbacks, and app exit/restart patterns. Activates when configuring app initialization, using setup hooks, spawning background tasks, or managing app lifecycle."
+description: >
+  Use when configuring app initialization, using setup hooks, spawning background tasks, or managing app lifecycle.
+  Prevents misconfigured Builder chains and missing plugin registration that cause silent runtime failures.
+  Covers Builder configuration, setup hook, AppHandle usage, Manager trait, tokio async runtime, and app exit/restart.
+  Keywords: tauri builder, setup hook, AppHandle, Manager trait, tokio runtime, app lifecycle, window events.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

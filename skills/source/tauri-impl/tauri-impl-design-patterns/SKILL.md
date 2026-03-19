@@ -1,10 +1,14 @@
 ---
 name: tauri-impl-design-patterns
-description: "Guides architectural design patterns for Tauri 2 applications including when to use commands vs events vs channels, state architecture decisions, frontend-backend responsibility split, offline-first patterns, error boundary design, performance optimization, and common application archetypes (note-taking app, dashboard, file manager, chat app). Activates when designing Tauri app architecture, choosing between IPC approaches, or planning application structure."
+description: >
+  Use when designing Tauri 2 app architecture, choosing between IPC approaches, or planning application structure.
+  Prevents using commands for streaming data, events for request/response, and putting business logic in the frontend.
+  Covers commands vs events vs channels, state architecture, frontend-backend split, offline-first, and application archetypes.
+  Keywords: tauri design patterns, architecture, commands vs events, Channel, offline-first, error boundary, IPC design.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

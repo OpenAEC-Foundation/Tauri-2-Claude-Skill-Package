@@ -1,10 +1,14 @@
 ---
 name: tauri-impl-multi-window
-description: "Guides multi-window patterns in Tauri 2 including creating windows from Rust and JavaScript, inter-window communication via events, show/hide patterns, splashscreen implementation, window lifecycle management, and parent-child relationships. Activates when creating secondary windows, implementing splashscreen flows, or communicating between windows."
+description: >
+  Use when creating secondary windows, implementing splashscreen flows, or communicating between windows in Tauri 2.
+  Prevents duplicate window label panics and orphaned window handles from missing lifecycle cleanup.
+  Covers creating windows from Rust and JavaScript, inter-window events, show/hide patterns, splashscreen, and parent-child relationships.
+  Keywords: tauri multi-window, secondary window, splashscreen, inter-window communication, window lifecycle, parent-child.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

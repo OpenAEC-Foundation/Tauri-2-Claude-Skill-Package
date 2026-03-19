@@ -1,10 +1,14 @@
 ---
 name: tauri-syntax-plugins-api
-description: "Guides using Tauri 2 official plugins including fs, dialog, http, notification, shell, clipboard, os, process, updater, store, and opener. Covers Cargo.toml and npm setup, permission requirements per plugin, path API with BaseDirectory, convertFileSrc utility, and isTauri() detection. Activates when using any official Tauri plugin, accessing the file system, making HTTP requests, showing dialogs, or resolving app directories."
+description: >
+  Use when using any official Tauri 2 plugin, accessing the file system, making HTTP requests, showing dialogs, or resolving app directories.
+  Prevents missing plugin initialization in Builder, missing npm packages, and absent permission entries.
+  Covers fs, dialog, http, notification, shell, clipboard, os, process, updater, store, opener, path API, and isTauri().
+  Keywords: tauri plugin, fs, dialog, http, notification, shell, clipboard, store, updater, BaseDirectory, convertFileSrc.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

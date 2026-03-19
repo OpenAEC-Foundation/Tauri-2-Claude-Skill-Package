@@ -1,10 +1,14 @@
 ---
 name: tauri-impl-project-setup
-description: "Guides creating new Tauri 2 projects including create-tauri-app scaffolding, project structure, frontend framework integration (React/Vue/Svelte/SolidJS/vanilla), src-tauri directory layout, lib.rs and main.rs split pattern, dev and build commands, and source control best practices. Activates when starting a new Tauri project, choosing a frontend framework, or understanding project structure."
+description: >
+  Use when starting a new Tauri 2 project, choosing a frontend framework, or understanding project structure.
+  Prevents incorrect lib.rs/main.rs split and missing build configuration that breaks dev and production builds.
+  Covers create-tauri-app scaffolding, project structure, frontend framework integration, src-tauri layout, and source control.
+  Keywords: tauri project setup, create-tauri-app, scaffolding, lib.rs, main.rs, frontend framework, project structure.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

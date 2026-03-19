@@ -1,10 +1,14 @@
 ---
 name: tauri-syntax-webview
-description: "Guides Tauri 2 Webview API including multi-webview per window, getCurrentWebview(), webview sizing and positioning, reparenting between windows, webview events, zoom control, and creating webviews inside existing windows. Activates when working with multiple webviews, embedding web content, or managing webview lifecycle."
+description: >
+  Use when working with multiple webviews, embedding web content, or managing webview lifecycle in Tauri 2.
+  Prevents confusing Window and Webview APIs and incorrect multi-webview positioning within a single window.
+  Covers multi-webview per window, getCurrentWebview(), webview sizing, reparenting, zoom control, and webview events.
+  Keywords: tauri webview, getCurrentWebview, multi-webview, webview events, zoom, reparent, embedded webview.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

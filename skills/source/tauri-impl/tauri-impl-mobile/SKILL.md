@@ -1,10 +1,14 @@
 ---
 name: tauri-impl-mobile
-description: "Guides Tauri 2 mobile development including Android and iOS target setup, tauri android/ios init/dev/build commands, platform-specific Rust code with cfg attributes, lib.rs restructuring for mobile, mobile entry point, Cargo.toml crate-type configuration, and mobile-specific considerations. Activates when targeting Android or iOS, writing platform-specific code, or setting up mobile development environment."
+description: >
+  Use when targeting Android or iOS, writing platform-specific code, or setting up mobile development environment.
+  Prevents missing crate-type configuration and incorrect lib.rs entry point that breaks mobile builds.
+  Covers Android and iOS target setup, tauri android/ios commands, cfg attributes, lib.rs restructuring, and Cargo.toml config.
+  Keywords: tauri mobile, android, ios, cfg(mobile), crate-type, mobile entry point, platform-specific code.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

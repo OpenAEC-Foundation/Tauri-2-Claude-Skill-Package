@@ -1,10 +1,14 @@
 ---
 name: tauri-impl-database
-description: "Guides database integration in Tauri 2 including SQLite via tauri-plugin-sql, persistent key-value storage via tauri-plugin-store with eager and lazy loading patterns, and custom database integration with sqlx/diesel/rusqlite through Tauri commands. Activates when adding database storage, implementing key-value persistence, or integrating SQL databases in Tauri apps."
+description: >
+  Use when adding database storage, implementing key-value persistence, or integrating SQL databases in Tauri 2 apps.
+  Prevents data loss from missing store auto-save configuration and SQL injection from unparameterized queries.
+  Covers SQLite via tauri-plugin-sql, key-value storage via tauri-plugin-store, and custom DB integration with sqlx/diesel/rusqlite.
+  Keywords: tauri database, SQLite, tauri-plugin-sql, tauri-plugin-store, key-value storage, sqlx, diesel, rusqlite.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

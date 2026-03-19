@@ -1,10 +1,14 @@
 ---
 name: tauri-agents-review
-description: "Provides a comprehensive validation checklist for reviewing Tauri 2 code including command signature correctness, permission coverage verification, state management patterns, error handling completeness, IPC bridge completeness (Rust+TypeScript pairing), security audit, and anti-pattern detection across all Tauri domains. Activates when reviewing Tauri code, auditing permissions, or validating a Tauri project before deployment."
+description: >
+  Use when reviewing Tauri 2 code, auditing permissions, or validating a Tauri project before deployment.
+  Prevents shipping apps with missing permissions, unhandled IPC errors, insecure CSP, and unregistered commands.
+  Covers command signature review, permission coverage, state management, error handling, security audit, and anti-pattern detection.
+  Keywords: tauri code review, validation checklist, security audit, permissions audit, anti-pattern scan, deployment readiness.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 
@@ -34,25 +38,25 @@ Review Order:
 For every `#[tauri::command]` function, verify:
 
 ```
-[ ] Function is NOT pub if defined directly in lib.rs
-[ ] Function IS pub if defined in a separate module
-[ ] Async commands use owned types (String, not &str) for parameters
+[ ] NEVER mark commands as pub if defined directly in lib.rs
+[ ] ALWAYS mark commands as pub if defined in a separate module
+[ ] ALWAYS use owned types (String, not &str) for async command parameters
     Exception: &str allowed if return type is Result<T, E>
-[ ] Return type is Result<T, E> for any fallible operation
-[ ] E implements serde::Serialize
-[ ] All custom types in parameters implement serde::Deserialize
-[ ] All custom types in return values implement serde::Serialize
-[ ] Event payload types implement both Serialize AND Clone
+[ ] ALWAYS return Result<T, E> for any fallible operation
+[ ] ALWAYS implement serde::Serialize on the error type E
+[ ] ALWAYS implement serde::Deserialize on all custom parameter types
+[ ] ALWAYS implement serde::Serialize on all custom return value types
+[ ] ALWAYS implement both Serialize AND Clone on event payload types
 ```
 
 ### 1B: Command Registration
 
 ```
-[ ] All commands listed in a SINGLE generate_handler![] call
-    FAIL if multiple .invoke_handler() calls found on Builder
-[ ] Every #[tauri::command] function is registered
+[ ] ALWAYS list all commands in a SINGLE generate_handler![] call
+    NEVER use multiple .invoke_handler() calls on Builder
+[ ] ALWAYS register every #[tauri::command] function
     Cross-reference: grep for #[tauri::command] and compare with generate_handler![]
-[ ] Module paths are correct (e.g., commands::greet, not just greet)
+[ ] ALWAYS use correct module paths (e.g., commands::greet, not just greet)
 ```
 
 ### 1C: IPC Bridge Completeness
@@ -60,24 +64,24 @@ For every `#[tauri::command]` function, verify:
 For every Rust command, verify a matching frontend invoke exists:
 
 ```
-[ ] invoke('command_name', ...) call exists in TypeScript/JavaScript
-[ ] Argument keys use camelCase (NOT snake_case)
-[ ] Argument types match Rust parameter types:
+[ ] ALWAYS verify invoke('command_name', ...) call exists in TypeScript/JavaScript
+[ ] ALWAYS use camelCase argument keys (NEVER use snake_case in frontend invoke calls)
+[ ] ALWAYS match argument types to Rust parameter types:
     - Rust String <-> JS string
     - Rust i32/u32/u64/f64 <-> JS number
     - Rust bool <-> JS boolean
     - Rust Vec<T> <-> JS array
     - Rust Option<T> <-> JS null/undefined
-[ ] Return type generic matches: invoke<ExpectedType>('...')
-[ ] Error case handled with try/catch
+[ ] ALWAYS specify return type generic: invoke<ExpectedType>('...')
+[ ] ALWAYS handle error case with try/catch
 ```
 
 ### 1D: Channel Usage (if applicable)
 
 ```
-[ ] Channel<T> parameter in Rust has matching new Channel<T>() in JS
-[ ] Channel.onmessage is set before invoke() call
-[ ] Channel type parameter matches Rust send() type
+[ ] ALWAYS pair Channel<T> parameter in Rust with matching new Channel<T>() in JS
+[ ] ALWAYS set Channel.onmessage before the invoke() call
+[ ] ALWAYS match Channel type parameter to Rust send() type
 ```
 
 ---
@@ -89,10 +93,10 @@ For every Rust command, verify a matching frontend invoke exists:
 For every plugin in Cargo.toml dependencies:
 
 ```
-[ ] Plugin initialized in Builder: .plugin(tauri_plugin_X::init())
-[ ] Corresponding npm package installed: @tauri-apps/plugin-X
-[ ] Permission entry exists in capabilities file(s)
-[ ] Default permission or specific allow-* permissions granted
+[ ] ALWAYS initialize plugin in Builder: .plugin(tauri_plugin_X::init())
+[ ] ALWAYS install corresponding npm package: @tauri-apps/plugin-X
+[ ] ALWAYS add permission entry in capabilities file(s)
+[ ] ALWAYS grant default permission or specific allow-* permissions
 ```
 
 ### 2B: Custom Command Permissions
@@ -100,10 +104,10 @@ For every plugin in Cargo.toml dependencies:
 For every `#[tauri::command]`:
 
 ```
-[ ] Permission defined in src-tauri/permissions/*.toml
+[ ] ALWAYS define permission in src-tauri/permissions/*.toml
     Format: commands.allow = ["command_name"]
-[ ] Permission referenced in capabilities file
-[ ] No custom command is callable without explicit permission
+[ ] ALWAYS reference permission in capabilities file
+[ ] NEVER allow a custom command to be callable without explicit permission
 ```
 
 ### 2C: Capability File Validation
@@ -111,22 +115,22 @@ For every `#[tauri::command]`:
 For every file in `src-tauri/capabilities/`:
 
 ```
-[ ] Has valid $schema reference
-[ ] Has unique identifier
-[ ] windows[] array targets specific labels (NOT ["*"] without justification)
-[ ] permissions[] array contains all needed permissions
-[ ] Platform-specific capabilities use correct platforms[] values
-[ ] No duplicate permission entries across capability files
+[ ] ALWAYS include valid $schema reference
+[ ] ALWAYS use unique identifier
+[ ] NEVER use windows: ["*"] without documented justification
+[ ] ALWAYS include all needed permissions in permissions[] array
+[ ] ALWAYS use correct platforms[] values for platform-specific capabilities
+[ ] NEVER duplicate permission entries across capability files
 ```
 
 ### 2D: Scope Verification
 
 ```
-[ ] fs plugin scopes restrict to needed directories only
-[ ] http plugin scopes restrict to needed URLs only
-[ ] shell plugin scopes whitelist specific commands only
-[ ] Asset protocol scope is minimal ($APPDATA/**, $RESOURCE/**)
-[ ] Deny rules used to exclude sensitive paths/URLs
+[ ] ALWAYS restrict fs plugin scopes to needed directories only
+[ ] ALWAYS restrict http plugin scopes to needed URLs only
+[ ] ALWAYS whitelist specific commands only in shell plugin scopes
+[ ] ALWAYS keep asset protocol scope minimal ($APPDATA/**, $RESOURCE/**)
+[ ] ALWAYS use deny rules to exclude sensitive paths/URLs
 ```
 
 ---
@@ -136,30 +140,29 @@ For every file in `src-tauri/capabilities/`:
 ### 3A: Registration
 
 ```
-[ ] All State<'_, T> types used in commands have matching manage() calls
-[ ] manage() called BEFORE any command that uses the state can execute
+[ ] ALWAYS ensure all State<'_, T> types used in commands have matching manage() calls
+[ ] ALWAYS call manage() BEFORE any command that uses the state can execute
     (i.e., in Builder chain or early in setup())
-[ ] No duplicate manage() calls for the same type (returns false)
-[ ] State types are Send + Sync + 'static
+[ ] NEVER call manage() twice for the same type (returns false)
+[ ] ALWAYS ensure state types are Send + Sync + 'static
 ```
 
 ### 3B: Thread Safety
 
 ```
-[ ] Mutable state wrapped in Mutex, RwLock, or atomic types
-[ ] std::sync::Mutex used by default (NOT tokio::sync::Mutex)
-[ ] tokio::sync::Mutex used ONLY when lock held across .await
-[ ] No Arc wrapping (Tauri manages Arc internally)
-[ ] No nested locking of the same Mutex (deadlock risk)
+[ ] ALWAYS wrap mutable state in Mutex, RwLock, or atomic types
+[ ] ALWAYS use std::sync::Mutex by default (NEVER use tokio::sync::Mutex unless lock held across .await)
+[ ] NEVER wrap state in Arc (Tauri manages Arc internally)
+[ ] NEVER nest locking of the same Mutex (deadlock risk)
 ```
 
 ### 3C: Lock Discipline
 
 ```
-[ ] Mutex guards are dropped before calling other functions that may lock
-[ ] Lock scopes are minimal (lock, operate, drop)
-[ ] RwLock used for read-heavy state (multiple concurrent readers)
-[ ] No lock held during I/O or network operations (unless tokio Mutex)
+[ ] ALWAYS drop Mutex guards before calling other functions that may lock
+[ ] ALWAYS keep lock scopes minimal (lock, operate, drop)
+[ ] ALWAYS use RwLock for read-heavy state (multiple concurrent readers)
+[ ] NEVER hold a lock during I/O or network operations (unless tokio Mutex)
 ```
 
 ---
@@ -169,21 +172,21 @@ For every file in `src-tauri/capabilities/`:
 ### 4A: Rust Side
 
 ```
-[ ] All commands returning data use Result<T, E>
-[ ] Error type uses thiserror (not manual Display impl)
-[ ] Error type implements Serialize (manual impl, not derive)
-[ ] No unwrap() or expect() in command handlers
-[ ] I/O errors converted via #[from] or manual From impl
-[ ] Error messages are user-friendly (no raw debug output)
+[ ] ALWAYS return Result<T, E> for commands returning data
+[ ] ALWAYS use thiserror for error types (NEVER use manual Display impl)
+[ ] ALWAYS implement Serialize on error types (manual impl, NEVER derive)
+[ ] NEVER use unwrap() or expect() in command handlers
+[ ] ALWAYS convert I/O errors via #[from] or manual From impl
+[ ] ALWAYS make error messages user-friendly (NEVER expose raw debug output)
 ```
 
 ### 4B: Frontend Side
 
 ```
-[ ] Every invoke() call wrapped in try/catch
-[ ] Error catch blocks handle the error (log, display, recover)
-[ ] Structured errors parsed correctly (if using tagged enum pattern)
-[ ] No unhandled Promise rejections from invoke()
+[ ] ALWAYS wrap every invoke() call in try/catch
+[ ] ALWAYS handle errors in catch blocks (log, display, recover)
+[ ] ALWAYS parse structured errors correctly (if using tagged enum pattern)
+[ ] NEVER leave unhandled Promise rejections from invoke()
 ```
 
 ---
@@ -193,32 +196,32 @@ For every file in `src-tauri/capabilities/`:
 ### 5A: Content Security Policy
 
 ```
-[ ] CSP is NOT null in production
-[ ] default-src set to 'self'
-[ ] script-src does NOT include 'unsafe-eval'
-[ ] connect-src includes ipc: and http://ipc.localhost
-[ ] img-src includes asset: and https://asset.localhost if needed
-[ ] No wildcard (*) domains without justification
+[ ] NEVER set CSP to null in production
+[ ] ALWAYS set default-src to 'self'
+[ ] NEVER include 'unsafe-eval' in script-src
+[ ] ALWAYS include ipc: and http://ipc.localhost in connect-src
+[ ] ALWAYS include asset: and https://asset.localhost in img-src if needed
+[ ] NEVER use wildcard (*) domains without documented justification
 ```
 
 ### 5B: Dangerous Settings
 
 ```
-[ ] freezePrototype set to true (prevents prototype pollution)
-[ ] dangerousDisableAssetCspModification is false or absent
-[ ] withGlobalTauri is false in production
-[ ] No shell:default without scope restrictions
-[ ] No fs permissions without scope restrictions
-[ ] No http permissions without URL scope
+[ ] ALWAYS set freezePrototype to true (prevents prototype pollution)
+[ ] NEVER enable dangerousDisableAssetCspModification
+[ ] NEVER enable withGlobalTauri in production
+[ ] NEVER use shell:default without scope restrictions
+[ ] NEVER grant fs permissions without scope restrictions
+[ ] NEVER grant http permissions without URL scope
 ```
 
 ### 5C: Capability Scope
 
 ```
-[ ] No capability uses windows: ["*"] with broad permissions
-[ ] Platform-specific capabilities correctly scoped
-[ ] Remote capabilities (if any) have minimal permissions
-[ ] Core permissions are explicit (core:default, core:window:default)
+[ ] NEVER use windows: ["*"] with broad permissions in any capability
+[ ] ALWAYS scope platform-specific capabilities correctly
+[ ] ALWAYS keep remote capabilities (if any) to minimal permissions
+[ ] ALWAYS use explicit core permissions (core:default, core:window:default)
 ```
 
 ---
@@ -228,40 +231,40 @@ For every file in `src-tauri/capabilities/`:
 ### 6A: tauri.conf.json
 
 ```
-[ ] identifier is unique reverse-domain format
-[ ] build.frontendDist points to correct output directory
-[ ] build.beforeBuildCommand builds frontend assets
-[ ] build.beforeDevCommand starts dev server
-[ ] build.devUrl matches dev server port
-[ ] app.windows[] has at least one window configured
-[ ] bundle.icon includes all required formats (.ico, .icns, .png)
+[ ] ALWAYS use unique reverse-domain format for identifier
+[ ] ALWAYS point build.frontendDist to correct output directory
+[ ] ALWAYS configure build.beforeBuildCommand to build frontend assets
+[ ] ALWAYS configure build.beforeDevCommand to start dev server
+[ ] ALWAYS match build.devUrl to dev server port
+[ ] ALWAYS configure at least one window in app.windows[]
+[ ] ALWAYS include all required icon formats (.ico, .icns, .png) in bundle.icon
 ```
 
 ### 6B: Cargo.toml
 
 ```
-[ ] tauri dependency version is 2.x
-[ ] tauri-build in build-dependencies
-[ ] build.rs exists and calls tauri_build::build()
-[ ] crate-type includes ["staticlib", "cdylib", "rlib"] if targeting mobile
-[ ] All plugin crates versioned at "2"
+[ ] ALWAYS use tauri dependency version 2.x
+[ ] ALWAYS include tauri-build in build-dependencies
+[ ] ALWAYS ensure build.rs exists and calls tauri_build::build()
+[ ] ALWAYS include ["staticlib", "cdylib", "rlib"] in crate-type if targeting mobile
+[ ] ALWAYS version all plugin crates at "2"
 ```
 
 ### 6C: Package.json
 
 ```
-[ ] @tauri-apps/cli in devDependencies
-[ ] @tauri-apps/api in dependencies
-[ ] All plugin npm packages installed (@tauri-apps/plugin-*)
-[ ] Versions aligned (all ^2)
+[ ] ALWAYS include @tauri-apps/cli in devDependencies
+[ ] ALWAYS include @tauri-apps/api in dependencies
+[ ] ALWAYS install all plugin npm packages (@tauri-apps/plugin-*)
+[ ] ALWAYS align versions (all ^2)
 ```
 
 ### 6D: Source Control
 
 ```
-[ ] Cargo.lock committed (NOT in .gitignore)
-[ ] src-tauri/target/ in .gitignore
-[ ] No secrets in committed files (.env, API keys, signing keys)
+[ ] ALWAYS commit Cargo.lock (NEVER add to .gitignore)
+[ ] ALWAYS add src-tauri/target/ to .gitignore
+[ ] NEVER commit secrets (.env, API keys, signing keys)
 ```
 
 ---
@@ -271,20 +274,20 @@ For every file in `src-tauri/capabilities/`:
 Scan the codebase for these known issues:
 
 ```
-[ ] No multiple .invoke_handler() calls
-[ ] No pub commands in lib.rs
-[ ] No Arc wrapping of managed state
-[ ] No &str in async command parameters (without Result return)
-[ ] No .unwrap() in command handlers
-[ ] No snake_case keys in frontend invoke() calls
-[ ] No event listeners without cleanup
-[ ] No event names with dots, spaces, or special characters
-[ ] No CSP set to null
-[ ] No missing Serialize on error types
-[ ] No missing Clone on event payloads
-[ ] No sync I/O operations in command handlers (use async)
-[ ] No missing permissions for installed plugins
-[ ] No relative paths without BaseDirectory in fs calls
+[ ] NEVER use multiple .invoke_handler() calls
+[ ] NEVER use pub commands in lib.rs
+[ ] NEVER wrap managed state in Arc
+[ ] NEVER use &str in async command parameters (without Result return)
+[ ] NEVER use .unwrap() in command handlers
+[ ] NEVER use snake_case keys in frontend invoke() calls
+[ ] NEVER leave event listeners without cleanup
+[ ] NEVER use dots, spaces, or special characters in event names
+[ ] NEVER set CSP to null
+[ ] NEVER omit Serialize on error types
+[ ] NEVER omit Clone on event payloads
+[ ] NEVER use sync I/O operations in command handlers (ALWAYS use async)
+[ ] NEVER leave installed plugins without permissions
+[ ] NEVER use relative paths without BaseDirectory in fs calls
 ```
 
 ---

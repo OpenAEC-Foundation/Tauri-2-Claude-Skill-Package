@@ -1,10 +1,14 @@
 ---
 name: tauri-errors-ipc
-description: "Guides debugging and resolving Tauri 2 IPC errors including serialization failures, command not found, argument type mismatches between Rust and JavaScript, permission denied, async command panics, thiserror+Serialize pattern for structured errors, and frontend error handling. Activates when encountering invoke errors, serialization failures, or IPC-related panics."
+description: >
+  Use when encountering invoke errors, serialization failures, or IPC-related panics in Tauri 2.
+  Prevents silent type mismatches between Rust and JavaScript and missing Serialize on error types.
+  Covers serialization failures, command not found, argument type mismatches, permission denied, async panics, and thiserror patterns.
+  Keywords: tauri IPC error, invoke error, serialization failure, command not found, type mismatch, thiserror, Serialize.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

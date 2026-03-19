@@ -1,10 +1,14 @@
 ---
 name: tauri-impl-security
-description: "Guides Tauri 2 security implementation including Content Security Policy configuration, Tauri-specific protocols (tauri://, asset://, ipc://), freezePrototype, dangerousDisableAssetCspModification, isolation pattern, scope-based access control for files/URLs/shell commands, and dangerous permissions auditing. Activates when hardening Tauri app security, configuring CSP, reviewing permissions, or implementing isolation patterns."
+description: >
+  Use when hardening Tauri 2 app security, configuring CSP, reviewing permissions, or implementing isolation patterns.
+  Prevents overly permissive CSP, disabled prototype freeze, and unscoped file/shell/http permissions in production.
+  Covers CSP configuration, Tauri protocols, freezePrototype, isolation pattern, scope-based access control, and dangerous permissions.
+  Keywords: tauri security, CSP, Content Security Policy, freezePrototype, isolation pattern, scope, permissions audit.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

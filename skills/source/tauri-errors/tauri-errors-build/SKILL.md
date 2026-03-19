@@ -1,10 +1,14 @@
 ---
 name: tauri-errors-build
-description: "Guides debugging and resolving Tauri 2 build errors including Cargo compilation failures, bundler errors, code signing failures, missing system dependencies on Linux, mobile build issues, linker errors, and common CI/CD build failures. Activates when encountering build errors, bundler failures, or platform-specific compilation issues."
+description: >
+  Use when encountering Tauri 2 build errors, bundler failures, or platform-specific compilation issues.
+  Prevents chasing phantom failures from stale build artifacts and misidentifying the failing build pipeline phase.
+  Covers Cargo compilation failures, bundler errors, code signing failures, Linux dependencies, mobile builds, and CI/CD failures.
+  Keywords: tauri build error, cargo compile, bundler error, code signing, linker error, NSIS, WiX, CI/CD failure.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

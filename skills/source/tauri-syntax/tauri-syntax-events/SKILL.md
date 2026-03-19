@@ -1,10 +1,14 @@
 ---
 name: tauri-syntax-events
-description: "Guides Tauri 2 event system including emit/listen/once patterns, Emitter and Listener traits, global vs window-scoped events, event payloads with serde, frontend event API, TauriEvent built-in events, and unlisten cleanup. Activates when implementing event-driven communication between Rust and JavaScript or between windows."
+description: >
+  Use when implementing event-driven communication between Rust and JavaScript or between windows.
+  Prevents event listener memory leaks from missing unlisten cleanup and payload serialization failures.
+  Covers emit/listen/once patterns, Emitter and Listener traits, global vs window-scoped events, and frontend event API.
+  Keywords: tauri events, emit, listen, unlisten, event payload, Emitter trait, Listener trait, window events.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

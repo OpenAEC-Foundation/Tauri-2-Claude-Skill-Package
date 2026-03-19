@@ -1,10 +1,14 @@
 ---
 name: tauri-errors-runtime
-description: "Guides debugging and resolving Tauri 2 runtime errors including window not found, state not managed panics, plugin not initialized, asset resolution failures, event name validation panics, webview crashes, and panic handling strategies. Activates when encountering runtime panics, state errors, or unexpected app crashes."
+description: >
+  Use when encountering runtime panics, state errors, or unexpected app crashes in Tauri 2.
+  Prevents unhandled unwrap() panics in production and unmanaged state type mismatches that crash the app.
+  Covers window not found, state not managed panics, plugin not initialized, asset resolution, event name validation, and panic handling.
+  Keywords: tauri runtime error, panic, state not managed, window not found, plugin not initialized, unwrap, crash.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

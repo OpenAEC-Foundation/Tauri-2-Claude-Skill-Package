@@ -89,3 +89,73 @@ Architectural and process decisions with rationale. Each decision is numbered an
 **Context**: Tauri 2 is relatively new and documentation evolves rapidly
 **Decision**: Use WebFetch tool for all research to ensure latest documentation is consulted
 **Rationale**: Claude's training data has a knowledge cutoff. Tauri 2 APIs may have changed since cutoff. WebFetch ensures research uses actual latest docs, not stale training data. This is critical for API accuracy guarantees.
+
+## D-013: Merge tauri-core-versions into tauri-impl-migration
+**Date**: 2026-03-18
+**Status**: ACTIVE
+**Context**: Masterplan refinement — version differences are only useful in migration context
+**Decision**: Merged `tauri-core-versions` into `tauri-impl-migration`. Standalone version matrix skill has no actionable scope.
+**Rationale**: All version content reduces to "use v2, here is what changed." Migration skill already covers this.
+
+## D-014: Merge tauri-syntax-invoke into tauri-syntax-commands
+**Date**: 2026-03-18
+**Status**: ACTIVE
+**Context**: Masterplan refinement — invoke is the JS side of commands
+**Decision**: Merged `tauri-syntax-invoke` into `tauri-syntax-commands`. Splitting them forces users to load two skills for one operation.
+**Rationale**: The combined skill covers both Rust `#[tauri::command]` and TS `invoke()` — matching the REQUIREMENTS.md dual-language mandate (D-008).
+
+## D-015: Merge tauri-syntax-path into tauri-syntax-plugins-api
+**Date**: 2026-03-18
+**Status**: ACTIVE
+**Context**: Masterplan refinement — Path API is thin (directory functions + path manipulation)
+**Decision**: Merged `tauri-syntax-path` into `tauri-syntax-plugins-api`. Path API is better covered as part of the plugins overview.
+**Rationale**: Path API alongside fs, dialog, etc. provides a more cohesive developer reference.
+
+## D-016: Clarify tauri-syntax-menu scope includes tray
+**Date**: 2026-03-18
+**Status**: ACTIVE
+**Context**: Masterplan refinement — menu and tray are documented together in research (sections 2.7, 3.6, 3.7)
+**Decision**: Keep `tauri-syntax-menu` as a single skill covering both menu and system tray.
+**Rationale**: Menu and tray share API patterns and are co-documented in the vooronderzoek.
+
+## D-017: Add tauri-syntax-webview skill
+**Date**: 2026-03-18
+**Status**: ACTIVE
+**Context**: Masterplan refinement — research section 3.4 reveals a distinct Webview API
+**Decision**: Added `tauri-syntax-webview` as a new skill. Multi-webview per window, reparenting, separate from Window API.
+**Rationale**: Not covered by any raw masterplan skill. The Webview API is distinct enough to warrant its own skill.
+
+## D-018: Reorder batches to respect dependency chains
+**Date**: 2026-03-18
+**Status**: ACTIVE
+**Context**: Masterplan refinement — batch order must respect skill dependencies
+**Decision**: Reordered batches: `syntax-permissions` moved earlier (batch 3) because `syntax-plugins-api` depends on it. `impl-security` moved to batch 7 with `impl-build-deploy`.
+**Rationale**: Dependency-ordered execution prevents skills from referencing not-yet-created prerequisites.
+
+## D-019: Rename tauri-agents-code-validator to tauri-agents-review
+**Date**: 2026-03-18
+**Status**: ACTIVE
+**Context**: Masterplan refinement — agent skill naming
+**Decision**: Renamed `tauri-agents-code-validator` to `tauri-agents-review`.
+**Rationale**: Better describes its function: reviewing generated Tauri code for correctness, not just validation.
+
+## D-020: Remove tauri-agents-migration-validator
+**Date**: 2026-03-18
+**Status**: ACTIVE
+**Context**: Masterplan refinement — overlap with `tauri-impl-migration`
+**Decision**: Removed `tauri-agents-migration-validator`. Two agent skills is sufficient.
+**Rationale**: The migration skill itself contains validation checklists. A separate agent for migration validation duplicates content.
+
+## D-021: Phase 4 Topic Research Consolidated into Vooronderzoek
+**Date**: 2026-03-18
+**Status**: ACTIVE
+**Context**: Phase 4 (topic-specific research) was planned as separate research files per skill topic
+**Decision**: Phase 4 topic-specific research was consolidated into the vooronderzoek (Phase 2)
+**Rationale**: The vooronderzoek at 3713 lines was comprehensive enough to cover all topic areas. Creating separate topic-research files would duplicate existing content without adding value. This approach was validated by successful skill creation in Phase 5.
+
+## D-022: Author Metadata Uses OpenAEC-Foundation
+**Date**: 2026-03-18
+**Status**: ACTIVE
+**Context**: Skill YAML frontmatter `author` field default vs actual authorship
+**Decision**: Skill metadata uses `author: OpenAEC-Foundation` as the publishing organization
+**Rationale**: OpenAEC-Foundation is the publishing organization for all skill packages. The template default is correct. All skills use this consistently.

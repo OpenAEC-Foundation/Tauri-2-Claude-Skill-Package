@@ -47,7 +47,7 @@ Date: 2026-03-18
 | `tauri-syntax-permissions` | Permissions system (new in v2); capability files (JSON); permission definitions (TOML); scope definitions (allow/deny); permission sets; core permissions; plugin permission naming; custom command permissions; platform-specific capabilities; remote API access; schema generation; inline capabilities | Capabilities, Permissions, Scopes, `default.json`, capability files, `CommandScope`, `GlobalScope` | Vooronderzoek §5.1, §5.2, §9.4, §9.5 | L | core-config |
 | `tauri-syntax-plugins-api` | Using official plugins (fs, dialog, http, notification, shell, clipboard, os, process, updater, store, opener); Cargo.toml + npm setup; permissions setup per plugin; **path API** (`appDataDir`, `join`, `resolve`, `BaseDirectory`); `convertFileSrc`; `isTauri()` | All `@tauri-apps/plugin-*` packages, `@tauri-apps/api/path`, `convertFileSrc`, `BaseDirectory` | Vooronderzoek §3.5, §3.8, §9.1–§9.6 | L | syntax-permissions |
 
-### tauri-impl/ (9 skills)
+### tauri-impl/ (10 skills)
 
 | Name | Scope | Key APIs | Research Input | Complexity | Dependencies |
 |------|-------|----------|----------------|------------|-------------|
@@ -60,6 +60,7 @@ Date: 2026-03-18
 | `tauri-impl-migration` | Tauri 1→2 migration; config restructuring; allowlist→permissions; Rust API renames; JS API renames; event system changes; menu system overhaul; feature flag changes; plugin migration table; migration CLI; **version differences** (v1 vs v2 feature matrix) | Migration steps, `npx @tauri-apps/cli migrate`, renamed APIs | Vooronderzoek §8 | M | core-config |
 | `tauri-impl-security` | Security implementation; CSP configuration; Tauri-specific protocols (`tauri:`, `asset:`, `ipc:`); asset protocol; `freezePrototype`; `dangerousDisableAssetCspModification`; isolation pattern; scope configuration; dangerous permissions audit; Windows URL scheme change | CSP headers, `assetProtocol`, `pattern`, protocol URLs | Vooronderzoek §5.3 | L | syntax-permissions, core-config |
 | `tauri-impl-database` | Database integration; SQLite via `tauri-plugin-sql`; persistent storage via `tauri-plugin-store` (eager + lazy loading); custom DB integration patterns (sqlx/diesel/rusqlite via commands) | `tauri-plugin-sql`, `tauri-plugin-store`, `load()`, `LazyStore` | Vooronderzoek §9.3 (Store section) | M | syntax-commands, syntax-plugins-api |
+| `tauri-impl-design-patterns` | Common Tauri 2 design patterns; component communication; state sharing; error handling patterns; repository/service patterns; command organization | Pattern implementations, trait patterns, module organization | Vooronderzoek §2, §10 | M | core-architecture, syntax-commands |
 
 ### tauri-errors/ (4 skills)
 
@@ -89,7 +90,7 @@ Date: 2026-03-18
 | 4 | `syntax-window`, `syntax-menu`, `syntax-plugins-api` | 3 | Batch 1–3 | Window/menu/plugins depend on permissions |
 | 5 | `syntax-webview`, `impl-project-setup`, `impl-testing` | 3 | Batch 2–4 | Webview extends window; project setup + testing |
 | 6 | `impl-plugin-development`, `impl-multi-window`, `impl-mobile` | 3 | Batch 2–5 | Implementation patterns |
-| 7 | `impl-build-deploy`, `impl-security`, `impl-migration` | 3 | Batch 1–4 | Build/security/migration reference skills |
+| 7 | `impl-build-deploy`, `impl-security`, `impl-migration`, `impl-design-patterns` | 4 | Batch 1–4 | Build/security/migration/patterns reference skills |
 | 8 | `impl-database`, `errors-ipc`, `errors-permissions` | 3 | Batch 2–4 | Database + first error skills |
 | 9 | `errors-build`, `errors-runtime` | 2 | Batch 7, Batch 2 | Remaining error skills |
 | 10 | `agents-review`, `agents-project-scaffolder` | 2 | ALL above | Agent skills reference all other skills |

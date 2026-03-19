@@ -1,10 +1,14 @@
 ---
 name: tauri-errors-permissions
-description: "Guides debugging and resolving Tauri 2 permission errors including capability misconfiguration, missing plugin permissions, scope violations, CSP violations, core vs plugin permission confusion, and step-by-step debugging workflows. Activates when encountering permission denied errors, CSP violations, or capability configuration issues."
+description: >
+  Use when encountering permission denied errors, CSP violations, or capability configuration issues in Tauri 2.
+  Prevents confusing core permissions with plugin permissions and missing scope restrictions on sensitive plugins.
+  Covers capability misconfiguration, missing plugin permissions, scope violations, CSP violations, and debugging workflows.
+  Keywords: tauri permission error, permission denied, CSP violation, capability, scope violation, plugin permissions.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

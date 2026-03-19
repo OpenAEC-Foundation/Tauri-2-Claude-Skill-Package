@@ -75,4 +75,11 @@ All skills in this package MUST be verified against these approved sources. No o
 
 | Technology | Date | Action | Notes |
 |------------|------|--------|-------|
-| Tauri | 2026-03-18 | Initial setup | All URLs pending verification |
+| Tauri v2 Documentation | 2026-03-18 | WebFetch verified | Primary reference during vooronderzoek |
+| Tauri v2 JS API Reference | 2026-03-18 | WebFetch verified | Frontend API patterns |
+| Tauri Rust Crate Docs | 2026-03-18 | WebFetch verified | Rust API signatures |
+| Tauri Config Reference | 2026-03-18 | WebFetch verified | tauri.conf.json schema |
+| Tauri Security/Permissions | 2026-03-18 | WebFetch verified | Permissions and capabilities |
+| Tauri Core Monorepo | 2026-03-18 | Source code reviewed | Anti-pattern research |
+| Tauri Plugins Workspace | 2026-03-18 | Source code reviewed | Plugin API patterns |
+| GitHub Issues | 2026-03-18 | Issues reviewed | Error patterns and anti-patterns |

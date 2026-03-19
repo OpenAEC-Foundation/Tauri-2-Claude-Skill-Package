@@ -1,10 +1,14 @@
 ---
 name: tauri-syntax-permissions
-description: "Guides Tauri 2 permissions and capabilities system including capability file structure, permission definitions in TOML, scope configuration (allow/deny), plugin permissions, custom command permissions, platform-specific capabilities, and remote API access. Activates when configuring permissions, creating capability files, setting up plugin access control, or debugging permission denied errors."
+description: >
+  Use when configuring permissions, creating capability files, setting up plugin access control, or debugging permission denied errors.
+  Prevents using v1 allowlist patterns and overly permissive wildcard capabilities that compromise security.
+  Covers capability file structure, permission definitions in TOML, scope configuration, plugin and custom command permissions.
+  Keywords: tauri permissions, capabilities, allow, deny, scope, TOML, plugin permissions, access control, ACL.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

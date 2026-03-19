@@ -1,10 +1,14 @@
 ---
 name: tauri-core-config
-description: "Guides tauri.conf.json configuration including build settings, app settings, window configuration, bundle options, plugin configuration, and security settings. Activates when editing tauri.conf.json, configuring Tauri build options, or setting up platform-specific bundle configuration."
+description: >
+  Use when editing tauri.conf.json, configuring build options, or setting up platform-specific bundle configuration.
+  Prevents invalid configuration keys and v1 config patterns that silently fail in Tauri 2.
+  Covers build settings, app settings, window configuration, bundle options, plugin configuration, and security settings.
+  Keywords: tauri.conf.json, configuration, build settings, bundle options, window config, security settings.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 

@@ -1,10 +1,14 @@
 ---
 name: tauri-syntax-state
-description: "Guides Tauri 2 state management including app.manage(), State<T> injection in commands, AppHandle.state() access, thread-safe state with Mutex/RwLock, state initialization patterns, and common pitfalls like type mismatch panics and deadlocks. Activates when managing application state, sharing data between commands, or debugging state-related panics."
+description: >
+  Use when managing application state, sharing data between commands, or debugging state-related panics.
+  Prevents unmanaged state panics, Mutex deadlocks, and unnecessary Arc wrapping around managed state.
+  Covers app.manage(), State<T> injection, AppHandle.state(), thread-safe state with Mutex/RwLock, and initialization patterns.
+  Keywords: tauri state, manage, State<T>, Mutex, RwLock, AppHandle, thread safety, state injection.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:
-  author: Impertio
+  author: OpenAEC-Foundation
   version: "1.0"
 ---
 
