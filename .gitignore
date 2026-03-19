@@ -1,0 +1,19 @@
+# Personal session data
+PROMPTS.md
+
+# Claude local files (may contain tokens/secrets)
+CLAUDE.local.md
+.claude/settings.local.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+*.code-workspace
+
+# Temporary
+*.tmp
+*.bak

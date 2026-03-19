@@ -56,21 +56,6 @@
 
 ---
 
-## Installatie
+## Installation
 
-### Claude Code
-
-Kopieer de `skills/source/` directory naar je workspace:
-
-```bash
-# Optie 1: Clone het volledige pakket
-git clone https://github.com/OpenAEC-Foundation/Tauri-2-Claude-Skill-Package.git
-cp -r Tauri-2-Claude-Skill-Package/skills/source/ ~/.claude/skills/tauri/
-
-# Optie 2: Voeg toe als git submodule
-git submodule add https://github.com/OpenAEC-Foundation/Tauri-2-Claude-Skill-Package.git .claude/skills/tauri
-```
-
-### Claude.ai (Web)
-
-Upload individuele SKILL.md bestanden als project knowledge.
+See [README.md](README.md) for installation instructions.
