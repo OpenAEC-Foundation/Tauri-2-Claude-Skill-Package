@@ -1,5 +1,9 @@
 # Tauri 2 Claude Skill Package
 
+<p align="center">
+  <img src="docs/social-preview.png" alt="27 Deterministic Skills for Tauri 2" width="100%">
+</p>
+
 ![Claude Code Ready](https://img.shields.io/badge/Claude_Code-Ready-blue?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6IiBmaWxsPSIjZmZmIi8+PC9zdmc+)
 ![Tauri 2.x](https://img.shields.io/badge/Tauri-2.x-FFC131?style=flat-square&logo=tauri&logoColor=white)
 ![Rust + TypeScript](https://img.shields.io/badge/Rust_+_TypeScript-Full_Stack-orange?style=flat-square)

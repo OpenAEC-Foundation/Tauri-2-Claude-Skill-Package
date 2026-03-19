@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Preview Banner — Tauri 2 Skill Package</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2A2A32;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .banner {
+    width: 1280px;
+    height: 640px;
+    background: #2A2A32;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+  }
+
+  /* Tauri gradient top strip */
+  .top-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FFC131 0%, #FF8C00 50%, #24C8DB 100%);
+  }
+
+  /* Subtle blueprint grid */
+  .banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(250,250,249,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(250,250,249,0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+  }
+
+  /* Left content */
+  .left {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    padding: 72px 40px 56px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .number {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-size: 140px;
+    font-weight: 700;
+    color: #FAFAF9;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #FFC131;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+
+  .subtitle {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 17px;
+    color: #A1A1AA;
+    font-weight: 400;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+
+  /* Technology badges — ghost style per brand */
+  .badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    font-family: 'Inter', system-ui, sans-serif;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    background: transparent;
+    border: 2px solid;
+  }
+
+  .badge-tauri      { border-color: #FFC131; color: #FFC131; }
+  .badge-rust       { border-color: #DEA584; color: #DEA584; }
+  .badge-typescript { border-color: #3178C6; color: #3178C6; }
+
+  .versions {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: #A1A1AA;
+    letter-spacing: 0.05em;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .versions .sep {
+    color: #36363E;
+  }
+
+  /* Right code window */
+  .right {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    padding: 56px 56px 56px 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .code-window {
+    width: 100%;
+    background: rgba(54, 54, 62, 0.8);
+    border: 1px solid rgba(250,250,249,0.06);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+    max-height: 100%;
+  }
+
+  .code-window * {
+    overflow: hidden;
+  }
+
+  .code-titlebar {
+    background: rgba(42, 42, 50, 0.95);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(250,250,249,0.04);
+  }
+
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-red    { background: #DC2626; }
+  .dot-yellow { background: #F59E0B; }
+  .dot-green  { background: #16A34A; }
+
+  .code-filename {
+    color: #A1A1AA;
+    font-size: 13px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .code-body {
+    padding: 20px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #FAFAF9;
+  }
+
+  .comment  { color: #A1A1AA; }
+  .keyword  { color: #FFC131; }
+  .function { color: #FF8C00; }
+  .string   { color: #34D399; }
+  .operator { color: #24C8DB; }
+  .macro    { color: #DEA584; }
+  .type     { color: #3178C6; }
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 17px;
+    background: #FFC131;
+    vertical-align: text-bottom;
+  }
+
+  /* Foundation branding bottom-right */
+  .foundation {
+    position: absolute;
+    bottom: 28px;
+    right: 44px;
+    text-align: right;
+    z-index: 1;
+  }
+
+  .foundation-name {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .foundation-name .open { color: #FAFAF9; }
+  .foundation-name .aec  { color: #FFC131; }
+
+  .foundation-sub {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    color: #A1A1AA;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <div class="top-strip"></div>
+
+    <!-- Left: text content -->
+    <div class="left">
+      <div class="number">27</div>
+      <div class="title">Deterministic Skills</div>
+      <div class="subtitle">for flawless Tauri 2 desktop app development</div>
+
+      <div class="badges">
+        <div class="badge badge-tauri">Tauri 2</div>
+        <div class="badge badge-rust">Rust</div>
+        <div class="badge badge-typescript">TypeScript</div>
+      </div>
+
+      <div class="versions">
+        Tauri 2.x <span class="sep">│</span> Rust 1.77+ <span class="sep">│</span> TypeScript 5.x
+      </div>
+    </div>
+
+    <!-- Right: code window -->
+    <div class="right">
+      <div class="code-window">
+        <div class="code-titlebar">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-yellow"></div>
+          <div class="dot dot-green"></div>
+          <span class="code-filename">lib.rs</span>
+        </div>
+        <div class="code-body">
+          <span class="comment">// Tauri 2 Command — Correct Pattern</span><br>
+          <span class="macro">#[tauri::command]</span><br>
+          <span class="keyword">async</span> <span class="keyword">fn</span> <span class="function">greet</span>(name: <span class="type">String</span>) <span class="operator">-></span> <span class="type">Result</span>&lt;<span class="type">String</span>, <span class="type">String</span>&gt; {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">Ok</span>(<span class="keyword">format!</span>(<span class="string">"Hello, {}!"</span>, name))<br>
+          }<br>
+          <br>
+          <span class="comment">// NOT: tauri::Builder::default()</span><br>
+          <span class="comment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.run(generate_context!())</span><br>
+          <span class="comment">// Use lib.rs + main.rs split!</span><br>
+          <br>
+          <span class="macro">#[cfg_attr(mobile, tauri::mobile_entry_point)]</span><br>
+          <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="function">run</span>() {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;tauri::<span class="type">Builder</span>::<span class="function">default</span>()<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="function">invoke_handler</span>(<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tauri::<span class="function">generate_handler!</span>[<span class="function">greet</span>])<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="function">run</span>(tauri::<span class="function">generate_context!</span>())<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="function">expect</span>(<span class="string">"error running app"</span>);<br>
+          }<span class="cursor"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Foundation brand -->
+    <div class="foundation">
+      <div class="foundation-name"><span class="open">Open</span><span class="aec">AEC</span></div>
+      <div class="foundation-sub">Foundation</div>
+    </div>
+  </div>
+</body>
+</html>
