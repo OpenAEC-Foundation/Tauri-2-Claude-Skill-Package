@@ -495,8 +495,4 @@ What other approaches were evaluated and why rejected?
 - [references/examples.md](references/examples.md) -- Complete architectural examples for each archetype
 - [references/anti-patterns.md](references/anti-patterns.md) -- Architectural mistakes and their consequences
 
-### Official Sources
-
-- https://v2.tauri.app/develop/calling-rust/
-- https://v2.tauri.app/develop/state-management/
-- https://v2.tauri.app/concept/inter-process-communication/
+- Official sources: [Calling Rust](https://v2.tauri.app/develop/calling-rust/), [State](https://v2.tauri.app/develop/state-management/), [IPC](https://v2.tauri.app/concept/inter-process-communication/)
