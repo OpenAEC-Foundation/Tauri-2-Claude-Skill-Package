@@ -1,7 +1,7 @@
 # ROADMAP
 
-## Current Phase: 1 (Setup + Raw Masterplan)
-## Overall Progress: 0/30 skills (0%)
+## Current Phase: COMPLETE
+## Overall Progress: 27/27 skills (100%)
 
 ---
 
@@ -9,13 +9,13 @@
 
 | Phase | Name | Status | Skills |
 |-------|------|--------|--------|
-| 1 | Setup + Raw Masterplan | IN PROGRESS | — |
-| 2 | Deep Research (Vooronderzoek) | TODO | — |
-| 3 | Masterplan Refinement | TODO | — |
-| 4 | Topic-Specific Research | TODO | — |
-| 5 | Skill Creation | TODO | 0/30 |
-| 6 | Validation | TODO | — |
-| 7 | Publication | TODO | — |
+| 1 | Setup + Raw Masterplan | COMPLETE | — |
+| 2 | Deep Research (Vooronderzoek) | COMPLETE | — |
+| 3 | Masterplan Refinement | COMPLETE | — |
+| 4 | Topic-Specific Research | COMPLETE | — |
+| 5 | Skill Creation | COMPLETE | 27/27 |
+| 6 | Validation | COMPLETE | — |
+| 7 | Publication | COMPLETE | — |
 
 ---
 
@@ -23,12 +23,12 @@
 
 | Category | Count | Status |
 |----------|-------|--------|
-| tauri-core | 4 | PLANNED |
-| tauri-syntax | 10 | PLANNED |
-| tauri-impl | 9 | PLANNED |
-| tauri-errors | 4 | PLANNED |
-| tauri-agents | 3 | PLANNED |
-| **Total** | **30** | **0%** |
+| tauri-core | 3 | COMPLETE |
+| tauri-syntax | 8 | COMPLETE |
+| tauri-impl | 10 | COMPLETE |
+| tauri-errors | 4 | COMPLETE |
+| tauri-agents | 2 | COMPLETE |
+| **Total** | **27** | **100%** |
 
 ---
 
@@ -37,12 +37,19 @@
 | Date | Event |
 |------|-------|
 | 2026-03-18 | Project initialized — core governance files created |
+| 2026-03-18 | Phase 1 complete — raw masterplan, SOURCES.md, project structure |
+| 2026-03-18 | Phase 2 complete — deep research (vooronderzoek-tauri.md) |
+| 2026-03-18 | Phase 3 complete — masterplan refined, skill inventory adjusted to 27 skills |
+| 2026-03-18 | Phase 4 complete — topic-specific research for all 5 categories |
+| 2026-03-19 | Phase 5 complete — all 27 skills created across 5 categories |
+| 2026-03-19 | Phase 6 complete — validation pass, consistency checks, cross-references verified |
+| 2026-03-19 | Phase 7 complete — INDEX.md created, README.md updated, publication ready |
 
 ---
 
 ## Next Steps
 
-1. Complete Phase 1 core files (SOURCES.md, LESSONS.md, CHANGELOG.md)
-2. Create raw masterplan at `docs/masterplan/tauri-masterplan.md`
-3. Define preliminary skill inventory with 30 skills across 5 categories
-4. Start Phase 2: Deep research (vooronderzoek-tauri.md)
+1. GitHub release — tag v1.0.0 and publish release
+2. Publicatie op agentskills.org registry
+3. Community feedback verzamelen
+4. Periodieke updates bij nieuwe Tauri 2.x releases
