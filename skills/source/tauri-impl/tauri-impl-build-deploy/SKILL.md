@@ -4,7 +4,7 @@ description: >
   Use when building for production, configuring installers, setting up code signing, or creating CI/CD pipelines.
   Prevents unsigned builds being rejected by OS gatekeepers and missing resource files in bundled installers.
   Covers tauri build command, platform bundlers (NSIS/MSI/DMG/AppImage/deb), sidecars, code signing, updater, and GitHub Actions CI/CD.
-  Keywords: tauri build, deploy, NSIS, MSI, DMG, AppImage, code signing, auto-updater, CI/CD, GitHub Actions, sidecar.
+  Keywords: tauri build, deploy, NSIS, MSI, DMG, AppImage, code signing, auto-updater, CI/CD, GitHub Actions, sidecar, create installer, sign app, auto-update, GitHub release, distribute app, CI/CD pipeline..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:

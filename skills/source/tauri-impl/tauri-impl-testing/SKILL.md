@@ -4,7 +4,7 @@ description: >
   Use when writing tests for Tauri 2 commands, mocking IPC calls, or setting up E2E test suites.
   Prevents untestable command handlers and stale mock state from missing clearMocks() between tests.
   Covers Rust unit testing, frontend IPC mocking with mockIPC/mockWindows, WebDriver E2E testing, and integration testing.
-  Keywords: tauri testing, mockIPC, mockWindows, clearMocks, cargo test, E2E testing, WebDriver, Vitest.
+  Keywords: tauri testing, mockIPC, mockWindows, clearMocks, cargo test, E2E testing, WebDriver, Vitest, test commands, mock IPC, E2E test, unit test Rust, frontend test, Vitest..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

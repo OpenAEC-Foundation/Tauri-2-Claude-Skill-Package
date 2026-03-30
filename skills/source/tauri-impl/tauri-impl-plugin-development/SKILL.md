@@ -4,7 +4,7 @@ description: >
   Use when building custom Tauri 2 plugins, adding lifecycle hooks, or defining plugin permissions.
   Prevents incorrect plugin Builder chain ordering and missing build.rs permission generation.
   Covers plugin::Builder API, plugin commands and state, lifecycle hooks, mobile plugin development, and permission patterns.
-  Keywords: tauri plugin development, plugin Builder, lifecycle hooks, on_event, on_navigation, build.rs, custom plugin.
+  Keywords: tauri plugin development, plugin Builder, lifecycle hooks, on_event, on_navigation, build.rs, custom plugin, create Tauri plugin, custom plugin, plugin hooks, extend Tauri..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

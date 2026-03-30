@@ -4,7 +4,7 @@ description: >
   Use when creating application menus, system tray icons, context menus, or handling menu events in Tauri 2.
   Prevents using deprecated v1 menu patterns and missing menu event handler registration on the Builder.
   Covers MenuBuilder, menu item types, PredefinedMenuItem, context menus, TrayIconBuilder, and JavaScript Menu/TrayIcon APIs.
-  Keywords: tauri menu, MenuBuilder, TrayIcon, system tray, context menu, PredefinedMenuItem, menu events.
+  Keywords: tauri menu, MenuBuilder, TrayIcon, system tray, context menu, PredefinedMenuItem, menu events, app menu, system tray, context menu, right-click menu, tray icon, menu bar..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

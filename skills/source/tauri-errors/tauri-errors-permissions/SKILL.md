@@ -4,7 +4,7 @@ description: >
   Use when encountering permission denied errors, CSP violations, or capability configuration issues in Tauri 2.
   Prevents confusing core permissions with plugin permissions and missing scope restrictions on sensitive plugins.
   Covers capability misconfiguration, missing plugin permissions, scope violations, CSP violations, and debugging workflows.
-  Keywords: tauri permission error, permission denied, CSP violation, capability, scope violation, plugin permissions.
+  Keywords: tauri permission error, permission denied, CSP violation, capability, scope violation, plugin permissions, permission denied, blocked by CSP, capability missing, plugin access denied..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:

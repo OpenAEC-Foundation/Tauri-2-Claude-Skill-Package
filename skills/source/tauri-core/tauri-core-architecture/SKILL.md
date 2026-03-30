@@ -4,7 +4,7 @@ description: >
   Use when creating new Tauri 2 apps, understanding project structure, or reasoning about the component model.
   Prevents mixing Tauri 1.x architecture assumptions with the v2 multi-webview and capability-based model.
   Covers Rust backend structure, webview layer, IPC bridge model, process model, project layout, and type hierarchy.
-  Keywords: tauri architecture, project structure, IPC bridge, webview layer, process model, Rust backend.
+  Keywords: tauri architecture, project structure, IPC bridge, webview layer, process model, Rust backend, how Tauri works, project layout, frontend backend split, getting started, what is IPC..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

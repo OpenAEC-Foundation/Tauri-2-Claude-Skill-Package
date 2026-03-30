@@ -4,7 +4,7 @@ description: >
   Use when configuring permissions, creating capability files, setting up plugin access control, or debugging permission denied errors.
   Prevents using v1 allowlist patterns and overly permissive wildcard capabilities that compromise security.
   Covers capability file structure, permission definitions in TOML, scope configuration, plugin and custom command permissions.
-  Keywords: tauri permissions, capabilities, allow, deny, scope, TOML, plugin permissions, access control, ACL.
+  Keywords: tauri permissions, capabilities, allow, deny, scope, TOML, plugin permissions, access control, ACL, capability file, allow plugin, restrict access, permission TOML, scope config..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

@@ -4,7 +4,7 @@ description: >
   Use when encountering Tauri 2 build errors, bundler failures, or platform-specific compilation issues.
   Prevents chasing phantom failures from stale build artifacts and misidentifying the failing build pipeline phase.
   Covers Cargo compilation failures, bundler errors, code signing failures, Linux dependencies, mobile builds, and CI/CD failures.
-  Keywords: tauri build error, cargo compile, bundler error, code signing, linker error, NSIS, WiX, CI/CD failure.
+  Keywords: tauri build error, cargo compile, bundler error, code signing, linker error, NSIS, WiX, CI/CD failure, build fails, cargo error, linker error, NSIS error, installer broken, CI build fails..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:

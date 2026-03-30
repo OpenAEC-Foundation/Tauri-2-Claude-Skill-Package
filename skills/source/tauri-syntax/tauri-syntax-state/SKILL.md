@@ -4,7 +4,7 @@ description: >
   Use when managing application state, sharing data between commands, or debugging state-related panics.
   Prevents unmanaged state panics, Mutex deadlocks, and unnecessary Arc wrapping around managed state.
   Covers app.manage(), State<T> injection, AppHandle.state(), thread-safe state with Mutex/RwLock, and initialization patterns.
-  Keywords: tauri state, manage, State<T>, Mutex, RwLock, AppHandle, thread safety, state injection.
+  Keywords: tauri state, manage, State<T>, Mutex, RwLock, AppHandle, thread safety, state injection, shared state, global data, state between commands, Mutex, manage state, app state..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

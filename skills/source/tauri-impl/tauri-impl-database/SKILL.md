@@ -4,7 +4,7 @@ description: >
   Use when adding database storage, implementing key-value persistence, or integrating SQL databases in Tauri 2 apps.
   Prevents data loss from missing store auto-save configuration and SQL injection from unparameterized queries.
   Covers SQLite via tauri-plugin-sql, key-value storage via tauri-plugin-store, and custom DB integration with sqlx/diesel/rusqlite.
-  Keywords: tauri database, SQLite, tauri-plugin-sql, tauri-plugin-store, key-value storage, sqlx, diesel, rusqlite.
+  Keywords: tauri database, SQLite, tauri-plugin-sql, tauri-plugin-store, key-value storage, sqlx, diesel, rusqlite, save data locally, SQLite, persistent storage, key-value store, offline data..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:

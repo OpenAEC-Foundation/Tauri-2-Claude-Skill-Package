@@ -4,7 +4,7 @@ description: >
   Use when scaffolding a new Tauri 2 project, setting up initial project structure, or generating boilerplate code.
   Prevents incomplete scaffolding with missing permission files, unregistered commands, or broken IPC bridges.
   Covers configured plugins, capability files, Rust commands with TypeScript invoke calls, build pipeline, and frontend integration.
-  Keywords: tauri scaffolder, project generator, boilerplate, scaffold, new project, project structure, code generation.
+  Keywords: tauri scaffolder, project generator, boilerplate, scaffold, new project, project structure, code generation, new desktop app, start Tauri project, generate boilerplate, getting started..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:

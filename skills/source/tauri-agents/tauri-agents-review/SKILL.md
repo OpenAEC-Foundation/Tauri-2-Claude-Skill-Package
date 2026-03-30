@@ -4,7 +4,7 @@ description: >
   Use when reviewing Tauri 2 code, auditing permissions, or validating a Tauri project before deployment.
   Prevents shipping apps with missing permissions, unhandled IPC errors, insecure CSP, and unregistered commands.
   Covers command signature review, permission coverage, state management, error handling, security audit, and anti-pattern detection.
-  Keywords: tauri code review, validation checklist, security audit, permissions audit, anti-pattern scan, deployment readiness.
+  Keywords: tauri code review, validation checklist, security audit, permissions audit, anti-pattern scan, deployment readiness, check my Tauri code, security review, permission audit, before release..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:

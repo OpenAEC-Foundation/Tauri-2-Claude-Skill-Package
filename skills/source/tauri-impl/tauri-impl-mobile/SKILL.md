@@ -4,7 +4,7 @@ description: >
   Use when targeting Android or iOS, writing platform-specific code, or setting up mobile development environment.
   Prevents missing crate-type configuration and incorrect lib.rs entry point that breaks mobile builds.
   Covers Android and iOS target setup, tauri android/ios commands, cfg attributes, lib.rs restructuring, and Cargo.toml config.
-  Keywords: tauri mobile, android, ios, cfg(mobile), crate-type, mobile entry point, platform-specific code.
+  Keywords: tauri mobile, android, ios, cfg(mobile), crate-type, mobile entry point, platform-specific code, Android app, iOS app, mobile build, phone app, tablet app, cross-platform mobile..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

@@ -4,7 +4,7 @@ description: >
   Use when creating windows, handling window events, or managing multi-window layouts in Tauri 2.
   Prevents window label collisions and incorrect WebviewWindowBuilder usage that causes runtime panics.
   Covers WebviewWindowBuilder, window labels, window configuration, WindowEvent handling, and JavaScript Window class.
-  Keywords: tauri window, WebviewWindowBuilder, window events, window label, Window class, monitor, multi-window.
+  Keywords: tauri window, WebviewWindowBuilder, window events, window label, Window class, monitor, multi-window, window settings, create window, window events, minimize, maximize, fullscreen, window size..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

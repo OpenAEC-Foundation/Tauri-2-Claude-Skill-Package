@@ -4,7 +4,7 @@ description: >
   Use when creating secondary windows, implementing splashscreen flows, or communicating between windows in Tauri 2.
   Prevents duplicate window label panics and orphaned window handles from missing lifecycle cleanup.
   Covers creating windows from Rust and JavaScript, inter-window events, show/hide patterns, splashscreen, and parent-child relationships.
-  Keywords: tauri multi-window, secondary window, splashscreen, inter-window communication, window lifecycle, parent-child.
+  Keywords: tauri multi-window, secondary window, splashscreen, inter-window communication, window lifecycle, parent-child, open new window, splashscreen, popup window, window communication, child window..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

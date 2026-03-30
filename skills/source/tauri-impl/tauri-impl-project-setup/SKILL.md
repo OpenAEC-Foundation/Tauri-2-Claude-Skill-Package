@@ -4,7 +4,7 @@ description: >
   Use when starting a new Tauri 2 project, choosing a frontend framework, or understanding project structure.
   Prevents incorrect lib.rs/main.rs split and missing build configuration that breaks dev and production builds.
   Covers create-tauri-app scaffolding, project structure, frontend framework integration, src-tauri layout, and source control.
-  Keywords: tauri project setup, create-tauri-app, scaffolding, lib.rs, main.rs, frontend framework, project structure.
+  Keywords: tauri project setup, create-tauri-app, scaffolding, lib.rs, main.rs, frontend framework, project structure, create Tauri app, getting started, new project, choose frontend framework, initial setup..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

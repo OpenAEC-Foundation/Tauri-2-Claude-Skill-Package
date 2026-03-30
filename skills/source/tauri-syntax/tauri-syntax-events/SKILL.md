@@ -4,7 +4,7 @@ description: >
   Use when implementing event-driven communication between Rust and JavaScript or between windows.
   Prevents event listener memory leaks from missing unlisten cleanup and payload serialization failures.
   Covers emit/listen/once patterns, Emitter and Listener traits, global vs window-scoped events, and frontend event API.
-  Keywords: tauri events, emit, listen, unlisten, event payload, Emitter trait, Listener trait, window events.
+  Keywords: tauri events, emit, listen, unlisten, event payload, Emitter trait, Listener trait, window events, send event, listen for event, frontend backend communication, event payload, event cleanup..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

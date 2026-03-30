@@ -4,7 +4,7 @@ description: >
   Use when using any official Tauri 2 plugin, accessing the file system, making HTTP requests, showing dialogs, or resolving app directories.
   Prevents missing plugin initialization in Builder, missing npm packages, and absent permission entries.
   Covers fs, dialog, http, notification, shell, clipboard, os, process, updater, store, opener, path API, and isTauri().
-  Keywords: tauri plugin, fs, dialog, http, notification, shell, clipboard, store, updater, BaseDirectory, convertFileSrc.
+  Keywords: tauri plugin, fs, dialog, http, notification, shell, clipboard, store, updater, BaseDirectory, convertFileSrc, file system access, show dialog, HTTP request, clipboard, notifications, open URL..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

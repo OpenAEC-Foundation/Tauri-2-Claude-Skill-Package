@@ -4,7 +4,7 @@ description: >
   Use when writing Tauri commands, calling invoke(), handling IPC errors, or streaming data from Rust to JavaScript.
   Prevents command registration omissions, argument type mismatches between Rust and JS, and missing error serialization.
   Covers #[tauri::command] macro, sync/async commands, argument types, return types, thiserror, invoke() API, and Channel streaming.
-  Keywords: tauri command, invoke, IPC, async command, thiserror, Channel, generate_handler, command registration.
+  Keywords: tauri command, invoke, IPC, async command, thiserror, Channel, generate_handler, command registration, invoke example, call Rust from JS, return data from Rust, command handler, async command..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

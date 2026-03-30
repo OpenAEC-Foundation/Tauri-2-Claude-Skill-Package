@@ -4,7 +4,7 @@ description: >
   Use when configuring app initialization, using setup hooks, spawning background tasks, or managing app lifecycle.
   Prevents misconfigured Builder chains and missing plugin registration that cause silent runtime failures.
   Covers Builder configuration, setup hook, AppHandle usage, Manager trait, tokio async runtime, and app exit/restart.
-  Keywords: tauri builder, setup hook, AppHandle, Manager trait, tokio runtime, app lifecycle, window events.
+  Keywords: tauri builder, setup hook, AppHandle, Manager trait, tokio runtime, app lifecycle, window events, app startup, initialization, background task, app lifecycle, setup hook, async Rust..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

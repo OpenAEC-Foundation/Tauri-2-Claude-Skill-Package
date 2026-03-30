@@ -4,7 +4,7 @@ description: >
   Use when working with multiple webviews, embedding web content, or managing webview lifecycle in Tauri 2.
   Prevents confusing Window and Webview APIs and incorrect multi-webview positioning within a single window.
   Covers multi-webview per window, getCurrentWebview(), webview sizing, reparenting, zoom control, and webview events.
-  Keywords: tauri webview, getCurrentWebview, multi-webview, webview events, zoom, reparent, embedded webview.
+  Keywords: tauri webview, getCurrentWebview, multi-webview, webview events, zoom, reparent, embedded webview, multiple webviews, embed web content, webview configuration, zoom level..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

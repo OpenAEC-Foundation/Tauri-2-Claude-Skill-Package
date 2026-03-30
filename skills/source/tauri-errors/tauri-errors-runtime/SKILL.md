@@ -4,7 +4,7 @@ description: >
   Use when encountering runtime panics, state errors, or unexpected app crashes in Tauri 2.
   Prevents unhandled unwrap() panics in production and unmanaged state type mismatches that crash the app.
   Covers window not found, state not managed panics, plugin not initialized, asset resolution, event name validation, and panic handling.
-  Keywords: tauri runtime error, panic, state not managed, window not found, plugin not initialized, unwrap, crash.
+  Keywords: tauri runtime error, panic, state not managed, window not found, plugin not initialized, unwrap, crash, app crashes, panic, state error, window not found, plugin not registered, unwrap failed..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:

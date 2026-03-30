@@ -4,7 +4,7 @@ description: >
   Use when migrating from Tauri 1 to Tauri 2, updating legacy Tauri code, or comparing v1 vs v2 APIs.
   Prevents retaining v1 allowlist config, deprecated API calls, and outdated import paths that break at compile time.
   Covers config restructuring, allowlist to permissions conversion, Rust and JS API renames, event and menu system changes.
-  Keywords: tauri migration, v1 to v2, allowlist, permissions conversion, API rename, import path, upgrade.
+  Keywords: tauri migration, v1 to v2, allowlist, permissions conversion, API rename, import path, upgrade, upgrade from Tauri 1, v1 to v2, breaking changes, migration guide, update API calls..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:

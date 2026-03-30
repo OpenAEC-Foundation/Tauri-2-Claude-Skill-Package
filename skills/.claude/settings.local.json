@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find 'C:\\\\Users\\\\Freek Heijting\\\\Documents\\\\GitHub' -maxdepth 3 -name *linkedin* -o -name *LinkedIn*)",
+      "Bash(find 'C:\\\\Users\\\\Freek Heijting\\\\Documents\\\\GitHub' -maxdepth 4 -name *workspace*composer* -o -name *composer*post* -o -name *post*workspace*)",
+      "Bash(find 'C:\\\\Users\\\\Freek Heijting' -maxdepth 5 -name *linkedin*post* -o -name *post*linkedin* -o -name *versie*)",
+      "Bash(find 'C:\\\\Users\\\\Freek Heijting\\\\.claude' -name *linkedin* -o -name *post* -o -name *composer*)",
+      "Bash(find C:UsersFREEKH~1AppDataLocalTemp -name *linkedin* -o -name *post*)",
+      "Bash(find 'C:\\\\Users\\\\Freek Heijting\\\\Documents\\\\GitHub' -maxdepth 5 -name *.md -newer 'C:\\\\Users\\\\Freek Heijting\\\\Documents\\\\GitHub\\\\OpenAEC-Workspace-Composer\\\\PROMPTS.md' -not -path */node_modules/* -not -path */.git/*)",
+      "Bash(find 'C:\\\\Users\\\\Freek Heijting\\\\Documents\\\\GitHub' -maxdepth 3 -name *.md -not -path */node_modules/* -not -path */.git/* -not -path */.claude/skills/*)",
+      "Bash(grep -o \"\"text\"\":\"\"[^\"\"]*LinkedIn[^\"\"]*\"\" 'C:\\\\Users\\\\Freek Heijting\\\\.claude\\\\projects\\\\C--Users-Freek-Heijting-Documents-GitHub-OpenAEC-Workspace-Composer\\\\d96748e3-efc6-433d-831e-4cf7dcdf4e39.jsonl')"
+    ]
+  }
+}

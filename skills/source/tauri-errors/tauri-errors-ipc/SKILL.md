@@ -4,7 +4,7 @@ description: >
   Use when encountering invoke errors, serialization failures, or IPC-related panics in Tauri 2.
   Prevents silent type mismatches between Rust and JavaScript and missing Serialize on error types.
   Covers serialization failures, command not found, argument type mismatches, permission denied, async panics, and thiserror patterns.
-  Keywords: tauri IPC error, invoke error, serialization failure, command not found, type mismatch, thiserror, Serialize.
+  Keywords: tauri IPC error, invoke error, serialization failure, command not found, type mismatch, thiserror, Serialize, invoke fails, command not found, type mismatch, serialization error, Rust panic on invoke..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:

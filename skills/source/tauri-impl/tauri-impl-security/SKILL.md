@@ -4,7 +4,7 @@ description: >
   Use when hardening Tauri 2 app security, configuring CSP, reviewing permissions, or implementing isolation patterns.
   Prevents overly permissive CSP, disabled prototype freeze, and unscoped file/shell/http permissions in production.
   Covers CSP configuration, Tauri protocols, freezePrototype, isolation pattern, scope-based access control, and dangerous permissions.
-  Keywords: tauri security, CSP, Content Security Policy, freezePrototype, isolation pattern, scope, permissions audit.
+  Keywords: tauri security, CSP, Content Security Policy, freezePrototype, isolation pattern, scope, permissions audit, harden app, CSP policy, secure permissions, production security, lock down access..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:

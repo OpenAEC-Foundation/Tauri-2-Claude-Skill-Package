@@ -4,7 +4,7 @@ description: >
   Use when editing tauri.conf.json, configuring build options, or setting up platform-specific bundle configuration.
   Prevents invalid configuration keys and v1 config patterns that silently fail in Tauri 2.
   Covers build settings, app settings, window configuration, bundle options, plugin configuration, and security settings.
-  Keywords: tauri.conf.json, configuration, build settings, bundle options, window config, security settings.
+  Keywords: tauri.conf.json, configuration, build settings, bundle options, window config, security settings, tauri.conf.json, change settings, window size, app title, bundle config, icon..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x with Rust and TypeScript."
 metadata:

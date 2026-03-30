@@ -4,7 +4,7 @@ description: >
   Use when designing Tauri 2 app architecture, choosing between IPC approaches, or planning application structure.
   Prevents using commands for streaming data, events for request/response, and putting business logic in the frontend.
   Covers commands vs events vs channels, state architecture, frontend-backend split, offline-first, and application archetypes.
-  Keywords: tauri design patterns, architecture, commands vs events, Channel, offline-first, error boundary, IPC design.
+  Keywords: tauri design patterns, architecture, commands vs events, Channel, offline-first, error boundary, IPC design, when to use commands vs events, app architecture, offline-first, best practices..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Tauri 2.x."
 metadata:
