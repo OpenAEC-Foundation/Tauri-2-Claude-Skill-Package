@@ -1,0 +1,42 @@
+{
+  "name": "@openaec/tauri-2-claude-skill-package",
+  "version": "1.1.0",
+  "description": "27 deterministic Claude AI skills for Tauri 2 desktop app development — Rust + TypeScript full-stack skill package",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenAEC-Foundation/Tauri-2-Claude-Skill-Package"
+  },
+  "keywords": ["agent-skills", "agentskills", "claude-skills", "tauri", "tauri2", "rust", "typescript", "desktop-app"],
+  "agents": {
+    "skills": [
+      { "name": "tauri-agents-project-scaffolder", "path": "./skills/source/tauri-agents/tauri-agents-project-scaffolder" },
+      { "name": "tauri-agents-review", "path": "./skills/source/tauri-agents/tauri-agents-review" },
+      { "name": "tauri-core-architecture", "path": "./skills/source/tauri-core/tauri-core-architecture" },
+      { "name": "tauri-core-config", "path": "./skills/source/tauri-core/tauri-core-config" },
+      { "name": "tauri-core-runtime", "path": "./skills/source/tauri-core/tauri-core-runtime" },
+      { "name": "tauri-errors-build", "path": "./skills/source/tauri-errors/tauri-errors-build" },
+      { "name": "tauri-errors-ipc", "path": "./skills/source/tauri-errors/tauri-errors-ipc" },
+      { "name": "tauri-errors-permissions", "path": "./skills/source/tauri-errors/tauri-errors-permissions" },
+      { "name": "tauri-errors-runtime", "path": "./skills/source/tauri-errors/tauri-errors-runtime" },
+      { "name": "tauri-impl-build-deploy", "path": "./skills/source/tauri-impl/tauri-impl-build-deploy" },
+      { "name": "tauri-impl-database", "path": "./skills/source/tauri-impl/tauri-impl-database" },
+      { "name": "tauri-impl-design-patterns", "path": "./skills/source/tauri-impl/tauri-impl-design-patterns" },
+      { "name": "tauri-impl-migration", "path": "./skills/source/tauri-impl/tauri-impl-migration" },
+      { "name": "tauri-impl-mobile", "path": "./skills/source/tauri-impl/tauri-impl-mobile" },
+      { "name": "tauri-impl-multi-window", "path": "./skills/source/tauri-impl/tauri-impl-multi-window" },
+      { "name": "tauri-impl-plugin-development", "path": "./skills/source/tauri-impl/tauri-impl-plugin-development" },
+      { "name": "tauri-impl-project-setup", "path": "./skills/source/tauri-impl/tauri-impl-project-setup" },
+      { "name": "tauri-impl-security", "path": "./skills/source/tauri-impl/tauri-impl-security" },
+      { "name": "tauri-impl-testing", "path": "./skills/source/tauri-impl/tauri-impl-testing" },
+      { "name": "tauri-syntax-commands", "path": "./skills/source/tauri-syntax/tauri-syntax-commands" },
+      { "name": "tauri-syntax-events", "path": "./skills/source/tauri-syntax/tauri-syntax-events" },
+      { "name": "tauri-syntax-menu", "path": "./skills/source/tauri-syntax/tauri-syntax-menu" },
+      { "name": "tauri-syntax-permissions", "path": "./skills/source/tauri-syntax/tauri-syntax-permissions" },
+      { "name": "tauri-syntax-plugins-api", "path": "./skills/source/tauri-syntax/tauri-syntax-plugins-api" },
+      { "name": "tauri-syntax-state", "path": "./skills/source/tauri-syntax/tauri-syntax-state" },
+      { "name": "tauri-syntax-webview", "path": "./skills/source/tauri-syntax/tauri-syntax-webview" },
+      { "name": "tauri-syntax-window", "path": "./skills/source/tauri-syntax/tauri-syntax-window" }
+    ]
+  }
+}
